@@ -24,8 +24,6 @@ def checkwin(symbol):
     for i in range(1,4):
         if value[i]==value[i+3]==value[i+6] != " ":
             print(f"\n---//  {player[symbol][:8]} WIN !  //---"),exit()
-    if value[1]==value[5]==value[9] != " ":
-        print(f"\n---//  {player[symbol][:8]} WIN !  //---"),exit()
-    elif value[3]==value[5]==value[7] != " ":
+    if value[1]==value[5]==value[9] != " " or value[3]==value[5]==value[7] != " ":
         print(f"\n---//  {player[symbol][:8]} WIN !  //---"),exit()
 printboard(),inputs()
