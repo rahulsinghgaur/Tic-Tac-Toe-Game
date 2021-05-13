@@ -13,11 +13,11 @@ def inputs():
                     value[place] = symbol
                     break
                 else:print("Warning! Please Selcet Empty Space:")
-        printboard(),checkwin(symbol)   
+        printboard(),checkwin(symbol,i)   
 def printboard():
     system('cls')
     [print("-+-+-" if i==2 else f"{value[i]}|{value[i+1]}|{value[i+2]}") for i in [1,2,4,2,7]]
-def checkwin(symbol):
+def checkwin(symbol,last):
     for i in range(1,8,3):
         if value[i]==value[i+1]==value[i+2] != " ":
             print(f"\n---//  {player[symbol][:8]} WIN !  //---"),exit()
@@ -26,4 +26,5 @@ def checkwin(symbol):
             print(f"\n---//  {player[symbol][:8]} WIN !  //---"),exit()
     if value[1]==value[5]==value[9] != " " or value[3]==value[5]==value[7] != " ":
         print(f"\n---//  {player[symbol][:8]} WIN !  //---"),exit()
+    if last==9:print("\nMatch Draw !")
 printboard(),inputs()
